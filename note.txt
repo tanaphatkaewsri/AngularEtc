@@ -1,4 +1,7 @@
 16/10/66
 -Life Cycle Hook in Action
+https://www.youtube.com/watch?v=0Ywak7Ppszw
 -Directive
+https://www.youtube.com/watch?v=SK-xlWW4pOM
 -ReactiveFormsModule, FormModule
+https://www.youtube.com/watch?v=WtOEIAde5Lc&t=0s
