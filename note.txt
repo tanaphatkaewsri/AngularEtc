@@ -3,7 +3,18 @@
 https://www.youtube.com/watch?v=0Ywak7Ppszw
     -parent->child = use @Input, data-binding
     -argument HTMLInputElement: have many properties ex .value
-    -6.00
+    -sequence
+        -constructure() -> js feature
+            -input properties not update
+        -ngOnInit() -> fire once at the first change detection cycle, is value properties is update, suitable for add initialize logic in component
+        -ngOnChange(arg) -> take argument
+            -SimpleChanges: this is a interface that contain data input change ex previousValue, currentValue -> if same value ngOnChange will not get called
+        -ngDoCheck() -> whem something has change DoCheck called (event value in input not change)
+        -ngAfterContentInit() -> run once
+        -ngAfterContentCheck()
+        -ngAfterViewInit()-> run once (come after all fully initialize)
+        -ngAfterViewChecked() -> call when every View change
+        -ngOnDestroy() -> get called before component, directive get destroyed
 -Directive
 https://www.youtube.com/watch?v=SK-xlWW4pOM
 -ReactiveFormsModule, FormModule
