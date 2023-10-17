@@ -1,6 +1,5 @@
 16/10/66
 -Life Cycle Hook in Action
-https://www.youtube.com/watch?v=0Ywak7Ppszw
     -parent->child = use @Input, data-binding
     -argument HTMLInputElement: have many properties ex .value
     -sequence
@@ -15,7 +14,33 @@ https://www.youtube.com/watch?v=0Ywak7Ppszw
         -ngAfterViewInit()-> run once (come after all fully initialize)
         -ngAfterViewChecked() -> call when every View change
         -ngOnDestroy() -> get called before component, directive get destroyed
--Directive
-https://www.youtube.com/watch?v=SK-xlWW4pOM
--ReactiveFormsModule, FormModule
-https://www.youtube.com/watch?v=WtOEIAde5Lc&t=0s
+17/10/66
+-Directive: https://www.youtube.com/watch?v=SK-xlWW4pOM
+    -Directive dont have a template
+        -when create directive we just create behavior and style on already exist element from components
+            -ex ngClass, ngStyle
+    -Type of directive
+        -structural -> manipulate structure of the DOM: *ngIf, *ngFor (use *)
+        -attribute -> modify behavior of element, component: ngStyle, ngClass
+        -built-in -> ngModel (for two-way binding)
+        -HostListener, HostBinding
+        -decorator -> @Directive: to create custom directive (structure, attribute)
+    -custom directive attribute, structural
+    -<ng-tenplate> -> use to define a template element that we can render condition, or reuse in our application
+        -ng-template -> not render any visible output, it's just serve a blueprint for content
+        -use with structural directive (*ngIf, *ngFor)
+        -use with content projection -> `<ng-content>`
+
+-Form Validation: https://www.youtube.com/watch?v=WtOEIAde5Lc&t=0s
+    -ReactiveFormsModule, FormModule
+        -can use with directive ngModel from FormModule 
+        -if we want to check component that can use this directive (ngModel), it's will have `NG_VALUE_ACCESSOR` -> and from this example PrimeNg have NG_VALUE_ACCESSOR, so it's can use with ngModel (that can use FormModule, ReactiveModule too)
+    -FormModule -> use directive ngModel
+        -ngModel, ngModelChange, two-way binding
+        -validate -> use directive 'required', .invalid, disable
+    -ReactiveFormsModule -> use directive formControl
+        -it's can handle data in form complex more than FormModule
+        -create value use 'new FormControl()'
+            -access by .value
+            -can use for first meet by .touched
+        -validation -> access in `FormControl(null, Validators.required)`
