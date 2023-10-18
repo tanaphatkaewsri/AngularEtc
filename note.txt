@@ -16,7 +16,7 @@
         -ngOnDestroy() -> get called before component, directive get destroyed
 17/10/66
 -Directive: https://www.youtube.com/watch?v=SK-xlWW4pOM
-    -Directive dont have a template
+    -Directive dont have a template (html tag)
         -when create directive we just create behavior and style on already exist element from components
             -ex ngClass, ngStyle
     -Type of directive
@@ -26,7 +26,7 @@
         -HostListener, HostBinding
         -decorator -> @Directive: to create custom directive (structure, attribute)
     -custom directive attribute, structural
-    -<ng-tenplate> -> use to define a template element that we can render condition, or reuse in our application
+    -<ng-template> -> use to define a template element that we can render condition, or reuse in our application
         -ng-template -> not render any visible output, it's just serve a blueprint for content
         -use with structural directive (*ngIf, *ngFor)
         -use with content projection -> `<ng-content>`
@@ -34,7 +34,7 @@
 -Form Validation: https://www.youtube.com/watch?v=WtOEIAde5Lc&t=0s
     -ReactiveFormsModule, FormModule
         -can use with directive ngModel from FormModule 
-        -if we want to check component that can use this directive (ngModel), it's will have `NG_VALUE_ACCESSOR` -> and from this example PrimeNg have NG_VALUE_ACCESSOR, so it's can use with ngModel (that can use FormModule, ReactiveModule too)
+        (if we want to check component that can use this directive (ngModel), it's will have `NG_VALUE_ACCESSOR`) -> and from this example PrimeNg have NG_VALUE_ACCESSOR, so it's can use with ngModel (and PrimeNg can use FormModule, ReactiveModule too)
     -FormModule -> use directive ngModel
         -ngModel, ngModelChange, two-way binding
         -validate -> use directive 'required', .invalid, disable
@@ -44,3 +44,6 @@
             -access by .value
             -can use for first meet by .touched
         -validation -> access in `FormControl(null, Validators.required)`
+    -Multi Validators with FormControl
+        -[Validators.required, Validators.email]
+        -check condition validate with (.errors | json) -> use with .hasError('property')
